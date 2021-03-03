@@ -1,0 +1,268 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity $time-hover cubic-bezier(0.4, 0, 0.2, 1),
+        visibility $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &.is-hidden {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+    
+    width: 95%;
+    height: 95%;
+    max-width: 450px;
+    max-height: 609px;
+    padding: 40px;
+    overflow: scroll;
+    
+    background: $background-modal;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    @media screen and (min-width: 1200px) {
+        max-width: 528px;
+        max-height: 580px;
+    }
+    
+    .backdrop.is-hidden & {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.modal-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #000000;
+    
+    transition: fill $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+    
+    .modal-close:hover &,
+    .modal-close:focus & {
+        fill: $accent-color;
+    }
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-title {
+    margin-bottom: 12px;
+    @include text($fs:20px, $lh:1.5);
+    text-align: center;
+    color: $title-color;
+    
+    @media screen and (min-width: 1200px) {
+        @include text($fs:20px, $lh:1.15);
+    }
+}
+
+.modal-form-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.modal-label {
+    margin-bottom: 4px;
+    @include text($fw:400, $fs:12px, $lh:1.17, $ls:0.01em);
+    color: $primary-text-color;
+}
+
+.modal-box {
+    position: relative;
+    
+    &:hover,
+    &:focus {
+        fill: $accent-color;
+        cursor: pointer;
+    }
+}
+
+.modal-input {
+    outline: none;
+    width: 100%;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 42px;
+    
+    transition: border-color $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover,
+    &:focus {
+        border-color: $accent-color;
+        cursor: pointer;
+    }
+}
+
+.modal-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    
+    transition: fill $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+    
+    .modal-input:hover+&,
+    .modal-input:focus+& {
+        fill: $accent-color;
+        cursor: pointer;
+    }
+}
+
+.modal-textarea {
+    outline: none;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    resize: none;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    overflow: scroll;
+
+    transition: border-color $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &::placeholder {
+        @include text($fw:400, $fs:12px, $lh:1.17, $ls:0.01em);
+        color: rgba(117, 117, 117, 0.5);
+    
+        transition: color $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    &:hover,
+    &:focus {
+        border-color: $accent-color;
+        cursor: pointer;
+        
+        &::placeholder,
+        &::placeholder {
+            color: $accent-color;
+        }
+    }
+}
+
+.conteiner-checkbox {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include text($fw:400,$fs:10px, $lh:1.167);
+    color: $primary-text-color;
+    
+    @media screen and (min-width: 480px) {
+        @include text($fw:400,$fs:12px, $lh:1.167);
+    }
+
+    @media screen and (min-width: 1200px) {
+        @include text($fw:400,$fs:14px, $lh:1.71);
+    }
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.checkbox-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    
+    .checkbox-label:focus-within &:checked {
+        background-color: $accent-color;
+        background-image: url('../images/sprite-svg/icon-check.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-origin: border-box;
+        border-color: transparent;
+    }
+}
+
+.checkbox-icon {
+    display: inline-block;
+    margin-right: 7px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-image: none;
+    
+    transition: background-color $time-hover cubic-bezier(0.4, 0, 0.2, 1),
+    border-color $time-hover cubic-bezier(0.4, 0, 0.2, 1),
+    background-image $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+    
+    @media screen and (min-width: 480px) {
+        width: 16px;
+        height: 15px;
+    }
+    
+    .checkbox-label:hover &,
+    .checkbox-label:focus-within & {
+        border: 2px solid $accent-color;
+        cursor: pointer;
+    }
+    
+    .checkbox-input:checked+& {
+        background-color: $accent-color;
+        background-image: url('../images/sprite-svg/icon-check.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-origin: border-box;
+        border-color: transparent;
+    }
+}
+
+.checkbox-link {
+    color: $accent-color;
+}

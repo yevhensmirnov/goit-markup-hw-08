@@ -1,0 +1,30 @@
+.hero-title {
+    @media screen and (max-width: 767px) {
+        @include text ($fw:900, $fs:26px, $lh:1.62, $ls:0.06em);
+        text-align: center;
+        text-transform: uppercase;
+        color: $hero-title-color;
+        margin-bottom: 30px;
+    }
+    
+    @media screen and (min-width: 768px) {
+        @include text ($fw:900, $fs:26px, $lh:1.62, $ls:0.06em);
+        text-align: center;
+        text-transform: uppercase;
+        color: $hero-title-color;
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        @include text ($fw:900, $fs:44px, $lh:1.36, $ls:0.06em);
+    }
+}
+
+.we-doing-title,
+.team-title,
+.customers-title {
+    @include text($fs:36px, $lh:1.17);
+    text-align: center;
+    color: $title-color;
+    margin-bottom: 50px;
+}

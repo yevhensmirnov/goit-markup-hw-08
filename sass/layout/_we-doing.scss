@@ -1,0 +1,31 @@
+.section-we-doing {
+    padding-bottom: 94px;
+
+    @media screen and (max-width: 1199px) {
+        display: none;
+    }
+}
+
+.we-doing-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.we-doing-item {
+    position: relative;
+}
+
+.we-doing-text {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    @include text();
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(47, 48, 58, 0.8);
+
+    color: $social-icon-dark-theme;
+}

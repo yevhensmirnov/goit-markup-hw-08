@@ -1,0 +1,26 @@
+@mixin button() {
+    min-width: 200px;
+    background-color: $accent-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: $btn-color;
+}
+
+@mixin btn-hover-focus() {
+    background-color: $btn-hover-bgcolor;
+    cursor: pointer;
+}
+
+@mixin text($fw:700, $fs:14px, $lh:1.14, $ls:0.03em) {
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
