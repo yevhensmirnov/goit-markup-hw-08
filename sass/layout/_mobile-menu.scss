@@ -1,155 +1,155 @@
 .burger-btn {
-    transition: fill $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 
-     &:hover,
-     &:focus {
-         fill: $accent-color;
-         cursor: pointer;
-     }
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+    cursor: pointer;
+  }
 }
 
 .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 100%;
-    max-width: 480px;
-    height: 100vh;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100%);
-    visibility: hidden;
-    pointer-events: none;
-    overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  max-width: 768px;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  visibility: hidden;
+  pointer-events: none;
+  overflow: scroll;
 
-    padding: 48px 40px;
-    background-color: $background-mobile-menu;
+  padding: 48px 40px;
+  background-color: $background-mobile-menu;
 
-    transition: transform $time-hover cubic-bezier(0.4, 0, 0.2, 1),
+  transition: transform $time-hover cubic-bezier(0.4, 0, 0.2, 1),
     visibility $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 
-    &.is-open {
-        transform: translateX(-50%) translateY(0);
-        visibility: visible;
-        pointer-events: visible;
-    }
+  &.is-open {
+    transform: translateX(-50%) translateY(0);
+    visibility: visible;
+    pointer-events: visible;
+  }
 
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .mobile-close-btn {
-    display: inline-flex;
-    background-color: transparent;
-    border: none;
-    padding: 0;
+  display: inline-flex;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 
-    transition: fill $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover,
-    &:focus {
-        fill: $accent-color;
-        cursor: pointer;
-    }
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+    cursor: pointer;
+  }
 }
 
 .mobile-close-icon {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    width: 40px;
-    height: 40px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
 }
 
 .mobile-menu-nav-item:not(:last-child) {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .mobile-menu-contacts-item:not(:last-child) {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .mobile-menu-nav-link {
-    @include text($fw:500, $fs:30px, $lh:1.175, $ls:0.02em);
+  @include text($fw: 500, $fs: 30px, $lh: 1.175, $ls: 0.02em);
 
-    @media screen and (min-width: 440px) {
-        @include text($fw:500, $fs:40px, $lh:1.175, $ls:0.02em);
-    }
+  @media screen and (min-width: 440px) {
+    @include text($fw: 500, $fs: 40px, $lh: 1.175, $ls: 0.02em);
+  }
 
-    color: $title-color;
+  color: $title-color;
 
-    transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 
-    &.current {
-        color: $accent-color;
-    }
+  &.current {
+    color: $accent-color;
+  }
 
-    &:hover,
-    &:focus {
-        color: $accent-color;
-    }
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 .mobile-menu-contacts {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 .mobile-menu-tel {
-    @include text($fw:500, $fs:24px, $lh:1.176, $ls:0.02em);
+  @include text($fw: 500, $fs: 24px, $lh: 1.176, $ls: 0.02em);
 
-    @media screen and (min-width: 440px) {
-        @include text($fw:500, $fs:34px, $lh:1.176, $ls:0.02em);
-    }
-        
-        color: $accent-color;
-        transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 440px) {
+    @include text($fw: 500, $fs: 34px, $lh: 1.176, $ls: 0.02em);
+  }
+
+  color: $accent-color;
+  transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-mail {
-    @include text($fw:500, $fs:16px, $lh:1.167, $ls:0.02em);
+  @include text($fw: 500, $fs: 16px, $lh: 1.167, $ls: 0.02em);
 
-    @media screen and (min-width: 440px) {
-        @include text($fw:500, $fs:24px, $lh:1.167, $ls:0.02em);
-    }
+  @media screen and (min-width: 440px) {
+    @include text($fw: 500, $fs: 24px, $lh: 1.167, $ls: 0.02em);
+  }
 
-    color: $primary-text-color;
+  color: $primary-text-color;
 
-    transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover,
-    &:focus {
-        color: $accent-color;
-    }
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
 }
 
 .mobile-social-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 64px;
 }
 
 .mobile-social-item:not(:last-child) {
-    margin-right: 6px;
-    padding-right: 6px;
+  margin-right: 6px;
+  padding-right: 6px;
 
-    border-right: 1px solid rgba(33, 33, 33, 0.2);
-    @media screen and (min-width: 440px) {
-        margin-right: 10px;
-        padding-right: 10px;
-    }
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  @media screen and (min-width: 440px) {
+    margin-right: 10px;
+    padding-right: 10px;
+  }
 
-    transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-social-link {
-    @include text($fw:500, $fs:12px, $lh:1.22, $ls:0.02em);
+  @include text($fw: 500, $fs: 12px, $lh: 1.22, $ls: 0.02em);
 
-    @media screen and (min-width: 440px) {
-        @include text($fw:500, $fs:18px, $lh:1.22, $ls:0.02em);
-    }
+  @media screen and (min-width: 440px) {
+    @include text($fw: 500, $fs: 18px, $lh: 1.22, $ls: 0.02em);
+  }
 
-    color: $accent-color;
+  color: $accent-color;
 
-    transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all $time-hover cubic-bezier(0.4, 0, 0.2, 1);
 }
