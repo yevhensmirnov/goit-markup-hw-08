@@ -1,58 +1,58 @@
 .section-info {
-    max-width: 100%;
-    margin: 0 auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
-    @media screen and (min-width: 1200px) {
-        padding-top: 94px;
-        padding-bottom: 94px;
-    }
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .info-list {
-    margin: -15px;
+  margin: -15px;
 
-    @media screen and (min-width: 768px) {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .info-item {
-    display: inline-block;
-    margin: 15px;
+  display: inline-block;
+  margin: 15px;
 
-    @media screen and (min-width: 768px) {
-        max-width: 354px;
-    }
-    
-    @media screen and (min-width: 1200px) {
-        max-width: 270px;
-    }
+  @media screen and (min-width: 768px) {
+    max-width: 354px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 270px;
+  }
 }
 
 .info-icon {
-    display: flex;
-    justify-content: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    background: $secondary-background-color;
-    border-radius: 4px;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  align-items: center;
+  background: $secondary-background-color;
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
 
 .info-item-title {
-    margin-bottom: 10px;
-    @include text();
-    text-transform: uppercase;
-    color: $title-color;
+  margin-bottom: 10px;
+  @include text();
+  text-transform: uppercase;
+  color: $title-color;
 
-    @media screen and (max-width: 767px) {
-        text-align: center;
-    }
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
 }
 
 .info-item-text {
-    @include text($fw:400, $lh:1.71);
+  @include text($fw: 400, $lh: 1.71);
 }
