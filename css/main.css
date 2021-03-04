@@ -78,19 +78,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 118px 30px;
-}
-
-@media screen and (min-width: 768px) {
-  .section-hero .conteiner {
-    padding: 118px 204px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .section-hero .conteiner {
-    padding: 200px 252px;
-  }
 }
 
 .footer .conteiner {
@@ -602,10 +589,23 @@ body {
 
 .section-hero {
   margin: 0 auto;
+  padding: 118px 0;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/Hero/hero-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .section-hero {
+    padding: 118px 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-hero {
+    padding: 200px 0;
+  }
 }
 
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
